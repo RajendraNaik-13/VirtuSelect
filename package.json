@@ -1,0 +1,36 @@
+{
+  "name": "virtuselect",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "db:push":"npx drizzle-kit push",
+    "db:studio":"npx drizzle-kit studio"
+  },
+  "dependencies": {
+    "@clerk/nextjs": "^5.3.7",
+    "@neondatabase/serverless": "^0.9.4",
+    "@radix-ui/react-icons": "^1.3.0",
+    "@radix-ui/react-slot": "^1.1.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "drizzle-orm": "^0.33.0",
+    "lucide-react": "^0.438.0",
+    "next": "14.2.7",
+    "react": "^18",
+    "react-dom": "^18",
+    "tailwind-merge": "^2.5.2",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "22.5.2",
+    "@types/react": "18.3.5",
+    "drizzle-kit": "^0.24.2",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "5.5.4"
+  }
+}
