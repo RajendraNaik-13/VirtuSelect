@@ -37,7 +37,7 @@ function RecordAnswerSection(interviewData,mockInterviewQuestion,activeQuestionI
   },[userAnswer])
   const StartStopRecording=async ()=>{
     if(isRecording){
-      setLoading(true);
+      
       stopSpeechToText()
       
     
