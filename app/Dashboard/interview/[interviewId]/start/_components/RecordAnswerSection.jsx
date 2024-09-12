@@ -9,8 +9,11 @@ import { toast } from 'sonner'
 import { chatSession } from '@/utils/AIGemini'
 import { UserAnswer } from '@/utils/schema'
 import { useUser } from '@clerk/nextjs'
+import { db } from '@/utils/db'
+import moment from 'moment'
 
-function RecordAnswerSection(interviewData,mockInterviewQuestion,activeQuestionIndex) {
+
+function RecordAnswerSection(mockInterviewQuestion,activeQuestionIndex,interviewData) {
  const {user} = useUser();
   const [userAnswer,setUserAnswer]=useState('');
   const [loading,setLoading]=useState(false);
@@ -46,10 +49,12 @@ function RecordAnswerSection(interviewData,mockInterviewQuestion,activeQuestionI
       startSpeechToText()
     }
   }
-  const UpdateUserAnswer=async()=>{
+  const UpdateUserAnswer= async()=>{
+    console.log(userAnswer)
+    console.log('Mock ID Reference:', interviewData?.mockId);
     setLoading(true)
-    const feedbackPrompt="Question:"+mockInterviewQuestion[activeQuestionIndex]?.question+"User answer:"+userAnswer+",please give the rating and feedback for further improvement 3 to 4 lines"
-      const result = await chatSession.sendMessage(feedbackPromt);
+    const feedbackPrompt="Question:"+mockInterviewQuestion[activeQuestionIndex]?.question+"User answer:"+userAnswer+"Depending on question and useranswer of interview question"+",please give the rating and feedback for further improvement 3 to 4 lines in json format"
+      const result = await chatSession.sendMessage(feedbackPrompt);
       const mockJsonResp = ( result.response.text()).replace('```json','').replace('```','')
       const JsonFeedbackResp=JSON.parse(mockJsonResp);
       const resp = await db.insert(UserAnswer).values({
