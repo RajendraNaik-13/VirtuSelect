@@ -25,7 +25,7 @@ function StartInterview({params}) {
     <div>
       <div className='grid grid-col-1 md:grid-cols-2 gap-10'>
         <QuestionSection mockInterviewQuestion={mockInterviewQuestion} activeQuestionIndex={activeQuestionIndex}></QuestionSection>
-        <RecordAnswerSection mockInterviewQuestion={mockInterviewQuestion} activeQuestionIndex={activeQuestionIndex} interviewData={interviewData}/>
+        <RecordAnswerSection mockInterviewQuestion={mockInterviewQuestion} activeQuestionIndex={activeQuestionIndex} interviewData={interviewData}></RecordAnswerSection>
       </div>
       <div className='flex justify-end gap-8'>
         {activeQuestionIndex>0 && <Button onClick={()=>setActiveQuestionIndex(activeQuestionIndex-1)} >Previous Question</Button>}
