@@ -43,7 +43,7 @@ function interview({params}) {
             {webCamEnabled? <Webcam
             onUserMedia={()=>setWebCamEnabled(true)}
             onUserMediaError={()=>setWebCamEnabled(false)}
-            mirrored={true}
+            mirrored={false}
              style={{
                 height:300,
                 width:300

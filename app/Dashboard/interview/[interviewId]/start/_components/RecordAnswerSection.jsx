@@ -69,7 +69,7 @@ function RecordAnswerSection(interviewData,mockInterviewQuestion,activeQuestionI
       setLoading(false);
   }
   return (
-    <div className='flex item-center justify-center flex-col'>
+    <div className='flex item-center justify-center flex-col items-center'>
       <div className='flex flex-col my-2 justify-center items-center bg-black rounded-lg p-5'>
         <Image src={'/ad.png'} width={200} height={200} className='absolute' />
         <Webcam style={{
