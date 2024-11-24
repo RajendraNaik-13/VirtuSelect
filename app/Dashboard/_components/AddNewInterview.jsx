@@ -36,7 +36,7 @@ function AddNewInterview() {
         setLoading(true)
         e.preventDefault()
         console.log(jobPoition,jobDesc,jobExpirence)
-        const InputPrompt="job position: "+jobPoition+", Job description:"+jobDesc+", job expirence:"+jobExpirence+"based on this generate 5 interview questions with answers in json format";
+        const InputPrompt="generate 5 question in jason format"
         const result=await chatSession.sendMessage(InputPrompt);
         const MockJsonResp=(result.response.text()).replace('```json','').replace('```','')
         console.log(JSON.parse(MockJsonResp));
