@@ -36,7 +36,7 @@ function AddNewInterview() {
         setLoading(true)
         e.preventDefault()
         console.log(jobPoition,jobDesc,jobExpirence)
-        const InputPrompt="generate 5 question in jason format"
+        const InputPrompt="job position: "+jobPoition+", Job description:"+jobDesc+", job expirence:"+jobExpirence+"based on this generate 5 interview questions with answers in json format";
         const result=await chatSession.sendMessage(InputPrompt);
         const MockJsonResp=(result.response.text()).replace('```json','').replace('```','')
         console.log(JSON.parse(MockJsonResp));
@@ -71,51 +71,51 @@ function AddNewInterview() {
         onClick={()=>setOPenDailog(true)}>
             <h2 className='font-bold text-lg text-center'>+ Add New</h2>
         </div>
-        <Dialog open={openDailog}> 
-        
-        <DialogContent className="max-w-xl">
-            <DialogHeader>
-            <DialogTitle className="text-2xl"> Tell Us More About Interview</DialogTitle>
-            <DialogDescription>
-                <form onSubmit={onSubmit}>
-                <div>
+            <Dialog open={openDailog}> 
+            
+            <DialogContent className="max-w-xl">
+                <DialogHeader>
+                <DialogTitle className="text-2xl"> Tell Us More About Interview</DialogTitle>
+                <DialogDescription>
+                    <form onSubmit={onSubmit}>
+                    <div>
+                        
+                        <h2>Add details About Job postion/role,Job description and years of expirence</h2>
+                        <div className='mt-7 my-3'>
+                            <label>Job Role/Position</label>
+                            <Input placeholder="Ex:Scientist" required
+                            onChange={(event)=>setJobPosition(event.target.value)}/>
+                        </div>
+                        <div className='my-3'>
+                            <label>Job Description</label>
+                            <Textarea placeholder="Ex:Project Manager" required
+                            onChange={(event)=>setJobDesc(event.target.value)}/>
+                        
+                        </div>
+                        <div className='my-3'>
+                            <label>Years of Expirence</label>
+                            <Input placeholder="Ex:5" type="number" required 
+                            onChange={(event)=>setJobExpirence(event.target.value)}/>
+
+                        </div>
+                    </div>
+
                     
-                    <h2>Add details About Job postion/role,Job description and years of expirence</h2>
-                    <div className='mt-7 my-3'>
-                        <label>Job Role/Position</label>
-                        <Input placeholder="Ex:Scientist" required
-                        onChange={(event)=>setJobPosition(event.target.value)}/>
+                    <div className='flex gap-5 justify-end'>
+                        <Button varient="ghost" type="button" onClick={()=>setOPenDailog(false)}>Cancel</Button>
+                        <Button type="submit" disabled={loading} >
+                            {loading?<>
+                            <LoaderCircle className='animate-spin'/> 'Genreating Questions'
+                            </>:'start interview'
+                        }
+                            </Button>
                     </div>
-                    <div className='my-3'>
-                        <label>Job Description</label>
-                        <Textarea placeholder="Ex:Project Manager" required
-                        onChange={(event)=>setJobDesc(event.target.value)}/>
-                       
-                    </div>
-                    <div className='my-3'>
-                        <label>Years of Expirence</label>
-                        <Input placeholder="Ex:5" type="number" required 
-                        onChange={(event)=>setJobExpirence(event.target.value)}/>
-
-                    </div>
-                </div>
-
-                
-                <div className='flex gap-5 justify-end'>
-                    <Button varient="ghost" type="button" onClick={()=>setOPenDailog(false)}>Cancel</Button>
-                    <Button type="submit" disabled={loading} >
-                        {loading?<>
-                        <LoaderCircle className='animate-spin'/> 'Genreating Questions'
-                        </>:'start interview'
-                    }
-                        </Button>
-                </div>
-                </form>
-                
-            </DialogDescription>
-            </DialogHeader>
-        </DialogContent>
-        </Dialog>
+                    </form>
+                    
+                </DialogDescription>
+                </DialogHeader>
+            </DialogContent>
+            </Dialog>
 
     </div>
   )
