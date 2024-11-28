@@ -58,7 +58,7 @@ function RecordAnswerSection({ mockInterviewQuestion, activeQuestionIndex, inter
 
     setLoading(true);
     try {
-      const feedbackPrompt = `Question: ${mockInterviewQuestion[activeQuestionIndex]?.question}\nUser answer: ${userAnswer}\nDepending on question and useranswer of interview question, please give the rating out of 10 and feedback for further improvement 3 to 4 lines in json format`;
+      const feedbackPrompt = `Question: ${mockInterviewQuestion[activeQuestionIndex]?.question}\nUser answer: ${userAnswer}\nDepending on question and useranswer of interview question, please give the rating out of 100 and feedback for further improvement 3 to 4 lines in json format`;
       const result = await chatSession.sendMessage(feedbackPrompt);
       const mockJsonResp = (result.response.text()).replace('```json', '').replace('```', '');
       const JsonFeedbackResp = JSON.parse(mockJsonResp);

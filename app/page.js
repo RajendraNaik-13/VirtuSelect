@@ -1,6 +1,8 @@
 "use client"
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 import { useRouter } from "next/navigation"; // Use `next/navigation` for App Router compatibility
+import Background from "./Dashboard/_components/background";
+import Header from "./Dashboard/_components/Header";
 
 export default function Home() {
   const router = useRouter(); // Initialize useRouter from next/navigation
@@ -11,6 +13,8 @@ export default function Home() {
   };
 
   return (
+    <>
+    
     <BackgroundBeamsWithCollision>
       <h2 className="text-2xl relative z-20 md:text-4xl lg:text-7xl font-bold text-center text-black dark:text-white font-sans tracking-tight">
         <div>
@@ -36,9 +40,12 @@ export default function Home() {
                 Let's Get Started
               </span>
             </button>
+            
           </div>
         </div>
       </h2>
     </BackgroundBeamsWithCollision>
+    <Background/>
+    </>
   );
 }
