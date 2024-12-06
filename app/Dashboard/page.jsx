@@ -1,10 +1,11 @@
+"use client"
 import { UserButton } from '@clerk/nextjs'
 import React from 'react'
 import AddNewInterview from './_components/AddNewInterview'
 import InterviewList from './_components/InterviewList'
 
 function Dashboard() {
-  return (<>
+  return (
     <div className='p-10'>
 
       <h2 className='font-bold text-3xl text-primary'>Dashboard</h2>
@@ -14,11 +15,11 @@ function Dashboard() {
         <AddNewInterview/>
       </div>
 
-      {/* Previous Interview List  */}
+      
       <InterviewList/>
     </div>
     
-    </>
+    
   )
 }
 

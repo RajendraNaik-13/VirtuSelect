@@ -9,7 +9,7 @@ export default function Home() {
 
   const navigateToDashboard = () => {
     router.push("/Dashboard"); // Navigate to the Dashboard page
-    console.log("hello")
+    
   };
 
   return (

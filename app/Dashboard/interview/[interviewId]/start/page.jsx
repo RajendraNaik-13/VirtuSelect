@@ -37,7 +37,7 @@ console.log(interviewData?.mockId);
         {activeQuestionIndex!=mockInterviewQuestion?.length-1 && <Button onClick={()=>setActiveQuestionIndex(activeQuestionIndex+1)}>Next Question</Button>}
         
         {activeQuestionIndex==mockInterviewQuestion?.length-1 && 
-        <Link href={'/Dashboard/interview/feedback'+interviewData?.mockId+"/feedback"}>
+        <Link href={'/Dashboard/interview/'+interviewData?.mockId+"/feedback"}>
         <Button> End Interview</Button>
         </Link>}
       </div>
