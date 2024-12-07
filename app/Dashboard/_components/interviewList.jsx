@@ -31,7 +31,7 @@ function InterviewList() {
       className="flex spitems-start justify-start items-baseline font-display text-4xl font-bold -tracking-widest  text-black dark:text-white md:text-5xl md:leading-[6rem]"
       text="Previous Mock Interview"
     />
-
+{/* */}
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 '>
             {interviewList?.length>0?interviewList.map((interview,index)=>(
                 <InterviewItemCard 
