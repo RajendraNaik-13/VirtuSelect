@@ -32,7 +32,7 @@ function Feedback({params}) {
     }
 
   return (
-    <div className='p-10'>
+    <div className=' p-10'>
         
         {feedbackList?.length==0?
         <h2 className='font-bold text-xl text-gray-500'>No Interview Feedback Record Found</h2>  
@@ -53,16 +53,16 @@ function Feedback({params}) {
             </CollapsibleTrigger>
             <CollapsibleContent>
             <div className='flex flex-col gap-2'>
-                <h2 className='text-red-500 p-2 border rounded-lg'><strong>Rating:</strong>{item.rating}</h2>
+                <h2 className='text-white p-2 border rounded-lg'><strong>Rating:</strong>{item.rating}</h2>
                 <div className='grid grid-cols-2 gap-4'>
-                    <h2 className='p-2 border rounded-lg bg-red-50 text-sm text-red-900'>
+                    <h2 className='p-2 border rounded-lg  text-sm text-red-600'>
                         <strong>Your Answer: </strong>{item.userAns}
                     </h2>
-                    <h2 className='p-2 border rounded-lg bg-green-50 text-sm text-green-900'>
+                    <h2 className='p-2 border rounded-lg  text-sm text-green-500'>
                         <strong>Correct Answer: </strong>{item.correctAns}
                     </h2>
                 </div>
-                <h2 className='p-2 border rounded-lg bg-blue-50 text-sm text-primary'>
+                <h2 className='p-2 border rounded-lg  text-sm text-white'>
                     <strong>Feedback: </strong>{item.feedback}
                 </h2>
             </div>
@@ -72,7 +72,7 @@ function Feedback({params}) {
  
   </>}
         
-        <Button onClick={()=>router.replace('/Dashboard')}>Go Home</Button>
+        <Button onClick={()=>router.replace('/Dashboard')} className="flex justify-center items-center mt-6 px-8">Go Home</Button>
     </div>
   )
 }

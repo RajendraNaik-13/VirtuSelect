@@ -5,7 +5,7 @@ import { useUser } from '@clerk/nextjs'
 import { desc, eq } from 'drizzle-orm';
 import React, { useEffect, useState } from 'react'
 import InterviewItemCard from './InterviewItemCard';
-
+import GradualSpacing from '@/components/ui/gradual-spacing';
 function InterviewList() {
 
     const {user}=useUser();
@@ -27,9 +27,12 @@ function InterviewList() {
 
   return (
     <div>
-        <h2 className='font-medium text-xl'>Previous Mock Interview</h2>
+    <GradualSpacing
+      className="flex spitems-start justify-start items-baseline font-display text-4xl font-bold -tracking-widest  text-black dark:text-white md:text-5xl md:leading-[6rem]"
+      text="Previous Mock Interview"
+    />
 
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-3'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 '>
             {interviewList?.length>0?interviewList.map((interview,index)=>(
                 <InterviewItemCard 
                 interview={interview}

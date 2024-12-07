@@ -7,7 +7,7 @@ export default function Background() {
     <div>
       
      
-<section className="py-8 bg-white z-50 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12">
+<section className="py-8 bg-gradient-to-b from-white to-neutral-100 dark:from-neutral-800 dark:to-neutral-950 z-50 px-20  text-center lg:py-16 lg:px-12">
 <h2 className="font-bold text-3xl">How it Works?</h2>
 <h2 className="text-md text-gray-500">Give interview in just 3 simple easy steps</h2>
 

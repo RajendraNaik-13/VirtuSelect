@@ -1,27 +1,42 @@
 "use client"
 import { UserButton } from '@clerk/nextjs'
 import Image from 'next/image'
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import React, { useEffect } from 'react'
-
 
 function Header() {
-    const path=usePathname();
-    useEffect(()=>{
-        console.log(path)
-    },[])
-  return (
-    <div className='flex p-4 items-center justify-between bg-secondary shadow-sm'>
-        <Image src={'/logo.svg'} width={40} height={30} alt='logo'/> 
-        <ul className='hidden md:flex gap-6 '>
-            <li className={`hover:text-primary hover:font-bold transition-all cursor-pointer ${path=='/Dashboard' && 'text-primary font-bold'}`}>Dashboard</li>
-            <li className={`hover:text-primary hover:font-bold transition-all cursor-pointer ${path=='/Dashboard/questions' && 'text-primary font-bold'}`}>Questions</li>
-            <li className={`hover:text-primary hover:font-bold transition-all cursor-pointer ${path=='/Dashboard/upgrade' && 'text-primary font-bold'}`}>Upgrade</li>
-            <li className={`hover:text-primary hover:font-bold transition-all cursor-pointer ${path=='/Dashboard/how' && 'text-primary font-bold'}`}>How It Works?</li>
+    const path = usePathname();
+    
+    const menuItems = [
+        { label: 'Dashboard', href: '/Dashboard' },
+        { label: 'Questions', href: '/Dashboard/questions' },
+        { label: 'Upgrade', href: '/Dashboard/upgrade' },
+        { label: 'How It Works?', href: '/Dashboard/how' }
+    ];
 
-        </ul>
-        <UserButton/>
-    </div>
-  )
+    return (
+        <div className='flex p-4 items-center justify-between bg-black shadow-sm'>
+            <Image src={'/logo.svg'} width={40} height={30} alt='logo'/> 
+            <ul className='hidden md:flex gap-6'>
+                {menuItems.map((item) => (
+                    <Link 
+                        key={item.href}
+                        href={item.href}
+                        className={`
+                            hover:text-primary 
+                            hover:font-bold 
+                            transition-all 
+                            cursor-pointer 
+                            ${path === item.href ? 'text-primary font-bold' : ''}
+                        `}
+                    >
+                        {item.label}
+                    </Link>
+                ))}
+            </ul>
+            <UserButton/>
+        </div>
+    )
 }
-export default Header 
+
+export default Header

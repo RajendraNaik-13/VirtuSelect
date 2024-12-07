@@ -58,7 +58,7 @@ function AddNewInterview() {
         if(resp)
         {
             setOpenDailog(false);
-            router.push('/dashboard/interview/'+resp[0]?.mockId)
+            router.push('/Dashboard/interview/'+resp[0]?.mockId)
         }
     }
     else{
@@ -68,12 +68,12 @@ function AddNewInterview() {
     }
   return (
     <div>
-        <div className='p-10 border rounded-lg bg-secondary
+        <div className='p-10 border rounded-lg bg-white
         hover:scale-105 hover:shadow-md cursor-pointer
-         transition-all border-dashed'
+         transition-all '
          onClick={()=>setOpenDailog(true)}
          >
-            <h2 className='text-lg text-center'>+ Add New</h2>
+            <h2 className='text-lg text-center text-black'>+ Add New</h2>
         </div>
         <Dialog open={openDailog}>
        
@@ -87,19 +87,19 @@ function AddNewInterview() {
                     <h2>Add Details about yout job position/role, Job description and years of experience</h2>
 
                     <div className='mt-7 my-3'>
-                        <label className='block mb-2 font-semibold text-gray-950'>Job Role/Job Position</label>
+                        <label className='block mb-2 font-semibold '>Job Role/Job Position</label>
                         <Input placeholder="Ex. Full Stack Developer" required
                         onChange={(event)=>setJobPosition(event.target.value)}
                         />
                     </div>
                     <div className=' my-3'>
-                        <label className='block mb-2 font-semibold text-gray-950'>Job Description / Tech Stack </label>
+                        <label className='block mb-2 font-semibold '>Job Description / Tech Stack </label>
                         <Textarea placeholder="Ex. React, Angular, NodeJs, MySql etc" 
                         required
                         onChange={(event)=>setJobDesc(event.target.value)} />
                     </div>
                     <div className=' my-3'>
-                        <label className='block mb-2 font-semibold text-gray-950'>Years of experience</label>
+                        <label className='block mb-2 font-semibold '>Years of experience</label>
                         <Input placeholder="Ex.5"  type="number"  max="100" 
                         required
                         onChange={(event)=>setJobExperience(event.target.value)}

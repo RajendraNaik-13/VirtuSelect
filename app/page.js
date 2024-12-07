@@ -16,8 +16,8 @@ export default function Home() {
     <>
     
     <BackgroundBeamsWithCollision>
-      <h2 className="text-2xl relative z-20 md:text-4xl lg:text-7xl font-bold text-center text-black dark:text-white font-sans tracking-tight">
-        <div>
+      <h2 className="text-2xl relative z-20 md:text-4xl lg:text-7xl font-bold text-center text-gray-700 dark:text-white  font-sans tracking-tight">
+        <div >
           <span className="text-9xl">VirtuSelect{" "}</span>
 
           <div className="relative mx-auto inline-block w-max [filter:drop-shadow(0px_1px_3px_rgba(27,_37,_80,_0.14))]">
@@ -32,7 +32,7 @@ export default function Home() {
             {/* Button */}
             <button
               onClick={navigateToDashboard}
-              className="relative inline-flex h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+              className="relative inline-flex mt-6 h-12 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
               aria-label="Navigate to Dashboard"
             >
               <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />

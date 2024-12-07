@@ -4,7 +4,7 @@ function Dashboardlayout({children}){
     return (
         <div>
             
-            <div className="mx-5 md:mx-20 lg:max-36">
+            <div className=" mx-5 md:px-20 lg:max-36 ">
             {children}
             </div>
         </div>
